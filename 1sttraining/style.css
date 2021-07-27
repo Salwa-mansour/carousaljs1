@@ -1,9 +1,14 @@
+/* https://medium.com/@marcusmichaels/how-to-build-a-carousel-from-scratch-in-vanilla-js-9a096d3b98c9 */
 .carousel-wrapper{
     overflow: hidden;
     width: 90%;
+    margin: auto;
+    position: relative;
+    background-color: blanchedalmond;
 }
 .carousel-wrapper * {
     box-sizing: border-box;
+
 }
 .carousel{
     transform-style: preserve-3d;
@@ -32,7 +37,7 @@
     transform: translateX(-100%); /* Move 'prev' item to the left */
 
 }
-.carousel__photo.next {
+.carousel-photo.next {
     transform: translateX(100%); /* Move 'next' item to the right */
   }
   /* adding arrows usign pesideu elemnts */
@@ -54,7 +59,7 @@
     right:0;
   }.carousel__button--prev::after,
   .carousel__button--next::after {
-    content: " >";
+    content: " &darr";
     position: absolute;
     width: 10px;
     height: 10px;
@@ -66,4 +71,25 @@
   }.carousel__button--next::after {
     left: 47%;
     transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  /* -----------the arrows I made ---------------- */
+  .arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.75rem;
+    /* padding:0.5rem; */
+    border: rgb(94, 93, 93) 1px solid;
+    line-height: .65;
+    width: 1.5rem;
+    height: 1.5rem;
+    text-align: center;
+    border-radius: 50%;
+    color:#333 ;
+  }
+  .arrow.right-arr{
+    right: 1rem;
+  }
+  .arrow.left-arr{
+    left: 1rem;
   }
